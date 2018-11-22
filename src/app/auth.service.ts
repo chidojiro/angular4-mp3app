@@ -24,7 +24,6 @@ export class AuthService {
                 user.isAdmin,
                 user.playlist ? Object.values(user.playlist) : null
               );
-              console.log(this.user.playlist);
               localStorage.setItem('localUser', JSON.stringify(this.user));
             });
           } catch {
