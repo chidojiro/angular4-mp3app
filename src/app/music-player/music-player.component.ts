@@ -72,7 +72,7 @@ export class MusicPlayerComponent implements OnDestroy, OnInit {
 
   changeLikeStatus() {
     if (!this.authService.user) {
-      return alert('Please Sign In To Use This Feature');
+      return alert('Vui Lòng Đăng Nhập');
     }
 
     if (!this.isUserLikedThisSong()) {
@@ -94,10 +94,13 @@ export class MusicPlayerComponent implements OnDestroy, OnInit {
   }
 
   isSongAddedToPlaylist() {
-    return this.authService.user.playlist.indexOf(this.song.id) !== -1;
+    return this.playlist ? this.authService.user.playlist.indexOf(this.song.id) !== -1 : false;
   }
 
   addToPlaylist() {
+    if (!this.playlist) {
+      return alert('Vui Lòng Đăng Nhập');
+    }
     this.authService.user.playlist.push(this.song.id);
     this.firebaseService.addSongToPlaylist(this.song, this.authService.user);
   }
