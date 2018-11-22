@@ -1,0 +1,71 @@
+.navbar {
+    height: 50px;
+    background-color: rgb(77, 77, 77);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo .fa-home {
+    color: white;
+    font-size: 2rem;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.logo h3 {
+    margin-left: 10px;
+    color: white;
+    display: inline-block;
+}
+
+.authen-management {
+    color: white;
+    margin-right: 30px;
+    width: 150px;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.user-management {
+    position: absolute;
+    width: 100%;
+    transform: translateY(-50%);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.user-options {
+    position: absolute;
+    width: 100%;
+    background-color: rgb(77, 77, 77);
+}
+
+.user-options a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar i {
+    color: white;
+    margin-left: 5px;
+}

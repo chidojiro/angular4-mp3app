@@ -1,0 +1,23 @@
+.disabled {
+    pointer-events: none;
+    color: gray;
+}
+
+.paging-content {
+    width: max-content;
+}
+
+span {
+    display: inline-block;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.present-page {
+    color: blue;
+    font-weight: bold;
+}
+
+.page-nagivate:hover {
+    color: blue;
+}

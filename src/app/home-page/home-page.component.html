@@ -1,0 +1,7 @@
+<h1 style="color: red;text-align:center">*HOMEPAGE IS UNDER CONSTRUCTION*</h1>
+<h3>Available Artists</h3>
+<div *ngIf="artists | async as artists">
+  <div *ngFor="let artist of artists">
+    {{artist}}
+  </div>
+</div>

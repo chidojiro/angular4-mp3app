@@ -1,0 +1,5 @@
+<ng-container *ngIf="nowPlaying">
+    <app-music-player [song]="nowPlaying" *ngIf="nowPlaying"></app-music-player>
+    <h3>Lời Bài Hát</h3>
+    <p class="lyric">{{nowPlaying.lyric}}</p>
+</ng-container>

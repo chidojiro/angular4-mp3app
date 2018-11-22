@@ -1,0 +1,50 @@
+.songs-list-item {
+    display: flex;
+    width: 600px;
+    border-bottom: 2px solid rgb(230, 230, 230);
+    padding: 10px;
+}
+
+a {
+    color: black;
+}
+
+.avatar {
+    background-color: rgb(230, 230, 230);
+    border-radius: 50%;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 20px;
+}
+
+.avatar i {
+    font-size: 3rem;
+}
+
+h5 {
+    margin: 0;
+}
+
+.title a:nth-child(1):hover {
+    color: blue;
+}
+
+.title .admin-operation {
+    display: block;
+    margin-left: 10px;
+    color: black;
+    z-index: 99;
+}
+
+.title .admin-operation:hover {
+    color: red;
+}
+
+.paging {
+    margin: 0 auto;
+    width: max-content;
+    margin-top: 50px;
+}

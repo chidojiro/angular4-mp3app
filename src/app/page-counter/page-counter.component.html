@@ -1,0 +1,15 @@
+<div class="paging-content">
+  <span (click)="changePage(1)" class="page-nagivate">Đầu</span>
+  <span (click)="changePage(pageConfig.page-1)" [class.disabled]="pageConfig.page === 1" class="page-nagivate">Trước</span>
+  <span class="page-nagivate" (click)="changePage(pageConfig.page-4)" *ngIf="pageConfig.max-pageConfig.page<=0 && pageConfig.page>=5">{{pageConfig.page-4}}</span>
+  <span class="page-nagivate" (click)="changePage(pageConfig.page-3)" *ngIf="pageConfig.max-pageConfig.page<=1 && pageConfig.page>=4">{{pageConfig.page-3}}</span>
+  <span class="page-nagivate" (click)="changePage(pageConfig.page-2)" *ngIf="pageConfig.page>=3">{{pageConfig.page-2}}</span>
+  <span class="page-nagivate" (click)="changePage(pageConfig.page-1)" *ngIf="pageConfig.page>=2">{{pageConfig.page-1}}</span>
+  <span class="page-nagivate present-page" (click)="changePage(pageConfig.page)">{{pageConfig.page}}</span>
+  <span class="page-nagivate" (click)="changePage(pageConfig.page+1)" *ngIf="pageConfig.max-pageConfig.page>=1">{{pageConfig.page+1}}</span>
+  <span class="page-nagivate" (click)="changePage(pageConfig.page+2)" *ngIf="pageConfig.max-pageConfig.page>=2">{{pageConfig.page+2}}</span>
+  <span class="page-nagivate" (click)="changePage(pageConfig.page+3)" *ngIf="pageConfig.max-pageConfig.page>=3 && pageConfig.page<=2">{{pageConfig.page+3}}</span>
+  <span class="page-nagivate" (click)="changePage(pageConfig.page+4)" *ngIf="pageConfig.max-pageConfig.page>=4 && pageConfig.page==1">{{pageConfig.page+4}}</span>
+  <span (click)="changePage(pageConfig.page+1)" [class.disabled]="pageConfig.max === pageConfig.page" class="page-nagivate">Tiếp</span>
+  <span (click)="changePage(pageConfig.max)" class="page-nagivate">Cuối</span>
+</div>

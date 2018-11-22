@@ -1,0 +1,103 @@
+.music-player {
+    width: 100%;
+    background-color: rgb(50,50,50);
+    height: 150px;
+    position: relative;
+}
+
+.player-control {
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(83, 83, 83);
+    width: 100%;
+    height: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.right-control * {
+    margin: 0 5px;
+}
+
+.volume-adjuster {
+    width: 70px;
+}
+
+.control-button {
+    color: black;
+}
+
+.control-button:hover {
+    color: white;
+}
+
+.slider {
+    cursor: pointer;
+    background: #d3d3d3;
+    outline: none;
+    appearance: none;
+    height: 5px;
+    display: block;
+}
+
+.music-progress{
+    width: 100%;
+    position: absolute;
+    bottom: 25%;
+    z-index: 10;
+    transition: 0.1s all ease-in;
+}
+
+.volume-adjuster {
+    width: 70px;
+}
+
+.music-progress:hover {
+    border-top: 1px solid rgb(43, 128, 255);
+}
+
+.music-progress::-webkit-slider-thumb, .volume-adjuster::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: black;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.operation {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.operation i {
+    margin-right: 10px;
+}
+
+.view p {
+    font-weight: 700;
+    display: inline-block;
+}
+
+.approve span {
+    display: inline-block;
+    transform: translateX(-10px);
+}
+
+.fa-heart {
+    transition: 0.1s all ease-in;
+}
+
+.liked {
+    color: red;
+}
+
+.activeLoop, .control-button:hover {
+    color: white;
+}
+
+.right-control {
+    align-items: center;
+}

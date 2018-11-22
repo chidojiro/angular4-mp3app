@@ -1,0 +1,19 @@
+<ng-container *ngIf="song">
+  <label for="title">Title</label>
+  <input type="text" id="title" [(ngModel)]="song.title">
+  <label for="artists">Artists</label>
+  <input type="text" id="artists" [(ngModel)]="artists" (change)="changeArtists($event.target.value)">
+  <h5>Genres</h5>
+  <div *ngFor="let genre of genresList">
+    <input type="checkbox" [id]="genre" [value]="genre" (change)="changeGenres($event.target.value, $event.target.checked)" [checked]="song.genres.indexOf(genre)!==-1">
+    <label [for]="genre">{{genre}}</label>
+  </div>
+  <h5>File</h5>
+  <input type="file" (change)="changeMp3($event.target.files[0])">
+  <audio controls>
+    <source [src]="song.downloadURL">
+  </audio>
+  <button (click)="editSong()">Save</button>
+  <h5>Lyrics</h5>
+  <textarea #ta [(ngModel)]="song.lyric"></textarea>
+</ng-container>

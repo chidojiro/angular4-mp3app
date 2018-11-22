@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~normalize.css/normalize.css';
+
+.btn {
+    cursor: pointer;
+}
+
+.general-content {
+    box-sizing: border-box;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 50px;
+    min-height: 100%;
+    background-color: white;
+    min-height: 100vh;
+    max-width: 1000px;
+}
+
+body {
+    background-color: rgb(230, 230, 230);
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.flex-around-center {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}

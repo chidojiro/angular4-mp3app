@@ -1,0 +1,22 @@
+h2 {
+    border-bottom: 2px solid rgb(230, 230, 230);
+    padding-bottom: 30px;
+}
+
+h4 {
+    margin: 10px 0;
+}
+
+.playlist-songs {
+    padding: 0 100px;
+}
+
+.playlist-song {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.playlist-song i {
+    margin-left: 10px;
+}

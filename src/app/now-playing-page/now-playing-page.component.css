@@ -1,0 +1,7 @@
+.lyric {
+    white-space: pre-line;
+}
+
+.artists, .genres {
+    font-weight: normal;
+}

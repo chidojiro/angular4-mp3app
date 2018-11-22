@@ -1,0 +1,58 @@
+<audio 
+  controls 
+  style="display: none" 
+  autoplay 
+  (play)="play()" 
+  (ended)="stop()"
+  [loop]="isLoop" 
+  #audio [muted]="isMuted">
+  <source [src]="getSong().downloadURL">
+</audio>
+<h2 class="title">{{getSong().title}}
+  <span class="artists"> - {{getSong().artists.join(', ')}}</span>
+</h2>
+<h5>Thể Loại: 
+  <span class="genres">{{getSong().genres.join(', ')}}</span>
+</h5>
+<div class="music-player">
+  <input type="range"
+    class="music-progress slider"
+    [value]="playedPercentage" 
+    max="1" 
+    min="0" 
+    step="0.0001" 
+    (change)="changeCurrentTime($event)" />
+  <div class="player-control flex-between">
+    <div class="left-control flex-around-center">
+      <i *ngIf="!isPlaying" class="fa fa-play control-button" (click)="play()"></i>
+      <i *ngIf="isPlaying" class="fa fa-pause control-button" (click)="pause()"></i>
+    </div>
+    <div class="right-control flex-around-center">
+      <div class="timer"></div>
+      <div *ngIf="isMuted || audio.volume===0; then muteVolume; else normalVolume"></div>
+      <ng-template #normalVolume><i class="fas fa-volume-up control-button" (click)="mute()"></i></ng-template>
+      <ng-template #muteVolume><i class="fas fa-volume-mute control-button" (click)="unmute()"></i></ng-template>
+      <input 
+        type="range" 
+        class="volume-adjuster slider" 
+        max="1" 
+        min="0" 
+        step="0.0001"
+        [value]="isMuted ? 0 : audio.volume"
+        (input)="changeVolume($event.target.value)" >
+      <i class="fas fa-redo loop" [class.activeLoop]="isLoop" (click)="loop()"></i>
+    </div>
+  </div>
+</div>
+<div class="operation">
+  <div class="approve">
+    <i class="fa fa-heart" (click)="changeLikeStatus()" [class.liked]="isUserLikedThisSong()"></i>
+    <span>{{song.likes}}</span>
+    <i class="fa fa-plus"  (click)="addToPlaylist()" *ngIf="!isSongAddedToPlaylist()"></i>
+    <i class="fas fa-check" *ngIf="isSongAddedToPlaylist()"></i>
+  </div>
+  <div class="view">
+    <i class="fa fa-headphones"></i>
+    <p>{{getSong().views}}</p>
+  </div>
+</div>

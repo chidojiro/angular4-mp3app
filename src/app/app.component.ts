@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(authService: AuthService) {
+  }
+
+  isSigningIn() {
+    return localStorage.getItem('isSigningIn');
+  }
 }

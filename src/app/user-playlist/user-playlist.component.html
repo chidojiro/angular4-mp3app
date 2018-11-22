@@ -1,0 +1,11 @@
+<h2>Playlist Của Bạn</h2>
+<ng-container *ngIf="playlist.length != 0;else noSong">
+  <app-music-player [playlist]="playlist" [nowPlaying]="nowPlaying"></app-music-player>
+  <div class="playlist-songs">
+    <div *ngFor="let song of playlist; let i = index" class="playlist-song" (click)="changeSong(song)">
+      <h4>{{i+1}}. {{song.title}} - {{song.artists.join(', ')}}</h4>
+      <i class="fas fa-play-circle" *ngIf="song.id === playlist[nowPlaying.index].id"></i>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noSong><h4>Chưa có bài hát nào</h4></ng-template>

@@ -1,0 +1,20 @@
+.music-page-content {
+    display: flex;
+}
+
+.ads-banners {
+    display: flex;
+    width: 30%;
+}
+
+.ads-banner {
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+app-music-player {
+    width: 70%;
+    position: relative;
+    display: block;
+}
