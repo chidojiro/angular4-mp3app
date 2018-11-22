@@ -12,7 +12,6 @@ export class PageCounterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.pageConfig);
   }
 
   changePage(page) {

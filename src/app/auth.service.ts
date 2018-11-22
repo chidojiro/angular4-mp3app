@@ -12,12 +12,11 @@ export class AuthService {
       this.user = localUser ? JSON.parse(localUser) : null;
     } else {
       this.firebaseService.authState.subscribe(async state => {
-        console.log(state);
         if (state) {
           try {
             const user$ = await firebaseService.updateUserInformation(state);
+            console.log('asd');
             user$.subscribe(user => {
-              console.log(user.playlist);
               this.user = new User(
                 user.displayName,
                 user.email,
@@ -25,6 +24,7 @@ export class AuthService {
                 user.isAdmin,
                 user.playlist ? Object.values(user.playlist) : null
               );
+              console.log(this.user.playlist);
               localStorage.setItem('localUser', JSON.stringify(this.user));
             });
           } catch {

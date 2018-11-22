@@ -26,9 +26,7 @@ export class MusicPlayerComponent implements OnDestroy, OnInit {
     this.getPlayer().volume = Number(localStorage.getItem('volume').valueOf()) || 1;
   }
 
-  constructor(private firebaseService: FirebaseService, private authService: AuthService) {
-
-  }
+  constructor(private firebaseService: FirebaseService, private authService: AuthService) { }
 
   getPlayer() {
     return document.querySelector('audio');

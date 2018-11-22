@@ -12,7 +12,6 @@ export class UserPlaylistComponent implements OnInit {
   playlist: any[] = [];
   constructor(private firebaseService: FirebaseService, private authService: AuthService) {
     firebaseService.getUserPlaylist(authService.user).subscribe(playlist => {
-      console.log(playlist);
       playlist.forEach(songId => {
         this.firebaseService.searchById(songId).subscribe(song => {
           this.playlist.push(song);

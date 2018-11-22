@@ -13,9 +13,9 @@
             <h4> {{song.title}} - {{song.artists.join(', ')}}</h4>
           </a>
           <a routerLink="/song/edit/{{song.id}}" class="admin-operation">
-            <i class="fas fa-edit" *ngIf="authService.user.isAdmin"></i>
+            <i class="fas fa-edit" *ngIf="authService.user?.isAdmin"></i>
           </a>
-          <i class="fas fa-trash admin-operation"  *ngIf="authService.user.isAdmin" (click)="deleteSong(song)"></i>
+          <i class="fas fa-trash admin-operation"  *ngIf="authService.user?.isAdmin" (click)="deleteSong(song)"></i>
         </div>
         <h5>Thể Loại: {{song.genres.join(', ')}}</h5>
       </div>
