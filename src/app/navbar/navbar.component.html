@@ -11,11 +11,11 @@
     <div class="user-management" *ngIf="authService.user" (mouseenter)="showUserOptions()" (mouseleave)="hideUserOptions()">
       <p>{{ authService.user.displayName }}</p>
       <div class="user-options" *ngIf="shouldShowUserOptions">
-        <a routerLink="admin/song/add" *ngIf="authService.user.isAdmin">Add new song</a>
+        <a routerLink="admin/song/add" *ngIf="authService.user.isAdmin">Thêm Bài Hát</a>
         <a routerLink="user/playlist">Playlist</a>
-        <a routerLink="" (click)="authService.logout()">Sign Out</a>
+        <a routerLink="" (click)="authService.logout()">Đăng Xuất</a>
       </div>
     </div>
-    <button class="signIn" *ngIf="!authService.user" (click)="authService.logginWithGoogleAuth()">Log in</button>
+    <span class="signIn" *ngIf="!authService.user" (click)="authService.logginWithGoogleAuth()">Đăng Nhập</span>
   </div>
 </div>
