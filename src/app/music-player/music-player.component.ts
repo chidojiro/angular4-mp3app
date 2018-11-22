@@ -23,7 +23,7 @@ export class MusicPlayerComponent implements OnDestroy, OnInit {
     if (this.playlist) {
       this.song = this.playlist[this.nowPlaying.index];
     }
-    this.getPlayer().volume = Number(localStorage.getItem('volume').valueOf()) || 1;
+    this.getPlayer().volume = Number(localStorage.getItem('volume')) || 1;
   }
 
   constructor(private firebaseService: FirebaseService, private authService: AuthService) { }
