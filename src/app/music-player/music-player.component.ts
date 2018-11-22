@@ -94,11 +94,11 @@ export class MusicPlayerComponent implements OnDestroy, OnInit {
   }
 
   isSongAddedToPlaylist() {
-    return this.playlist ? this.authService.user.playlist.indexOf(this.song.id) !== -1 : false;
+    return this.authService.user ? this.authService.user.playlist.indexOf(this.song.id) !== -1 : false;
   }
 
   addToPlaylist() {
-    if (!this.playlist) {
+    if (!this.authService.user) {
       return alert('Vui Lòng Đăng Nhập');
     }
     this.authService.user.playlist.push(this.song.id);
